@@ -1,7 +1,7 @@
 # contact manager API
 
 Getting started:
-root url => http://shrouded-taiga-9986.herokuapp.com/api/v1
+root url => http://shrouded-taiga-9986.herokuapp.com/api/v1/contacts
 
 # API
 
