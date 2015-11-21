@@ -1,6 +1,8 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,12 +13,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Database\Eloquent\Model::unguard();
-        \App\User::create([
-            'name' => 'Anto',
-            'email' => 'a@b.com',
-            'password' => bcrypt('123456')
-        ]);
-        \Illuminate\Database\Eloquent\Model::reguard();
+        $faker = Faker::create();
+
+        foreach (range( 1, 20 ) as $index) {
+            User::create(
+                [
+                    'name'   => $faker->firstName,
+                    'email'        => $faker->email,
+                    'password'     => bcrypt('123456789'),
+                ]
+            );
+        }
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Contact;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ContactsTableSeeder extends Seeder
 {
@@ -11,27 +13,19 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Database\Eloquent\Model::unguard();
-        \App\Contact::create([
-            'owner_id' => 1,
-            'first_name' => 'leantony',
-            'last_name' => 'anto',
-            'email' => 'leantony@github.com',
-            'address' => '12452210',
-            'twitter' => 'leantony',
+        $faker = Faker::create();
 
-        ]);
-
-        \App\Contact::create([
-            'owner_id' => 1,
-            'first_name' => 'antonychacha9',
-            'last_name' => 'anto9',
-            'email' => 'chachaantony@gmail.com',
-            'address' => '124521',
-            'twitter' => 'antonychacha',
-
-        ]);
-
-        \Illuminate\Database\Eloquent\Model::reguard();
+        foreach (range( 1, 20 ) as $index) {
+            Contact::create(
+                [
+                    'owner_id' => $faker->numberBetween(1, 19),
+                    'first_name' => $faker->firstName,
+                    'last_name' => $faker->lastName,
+                    'email' => $faker->email,
+                    'address' => $faker->address,
+                    'twitter' => $faker->userName,
+                ]
+            );
+        }
     }
 }
