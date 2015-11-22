@@ -30,6 +30,7 @@ curl -H "content-Type: application/json" -X POST -d '{
     "address": "12452210",
     "twitter": "leantony",
 }' https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts/create
+```
 
 + PATCH /contacts/update/{id}
 Updates a contact. Supply only the fields you want updated
