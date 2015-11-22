@@ -9,19 +9,19 @@ root API url => https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts
 ## HOW TO USE THE API
 
 + GET /contacts
-Returns all contacts
+-Returns all contacts
 ```bash
 curl -i https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts
 ```
 
 + GET /contacts/{id}
-Display a single contact
+-Display a single contact
 ```bash
 curl -i https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts/1
 ```
 
 + POST /contacts/create
-Saves a contact
+-Saves a contact
 ```bash
 curl -H "content-Type: application/json" -X POST -d '{
 	"first_name": "nooooah",
@@ -33,7 +33,7 @@ curl -H "content-Type: application/json" -X POST -d '{
 ```
 
 + PATCH /contacts/update/{id}
-Updates a contact. Supply only the fields you want updated
+-Updates a contact. Supply only the fields you want updated
 ```bash
 curl -H "content-Type: application/json" -X PATCH -d '{
 	"first_name": "antonyyyyy",
@@ -41,19 +41,19 @@ curl -H "content-Type: application/json" -X PATCH -d '{
 ```
 
 + PUT /contacts/restore/{id}
-Restores a deleted contact. This would only work if the contact was deleted
+-Restores a deleted contact. This would only work if the contact was deleted
 ```bash
 curl -X PUT https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts/restore/1
 ```
 
 + DELETE /contacts/delete{id}
-Permanently deletes a contact
+-Permanently deletes a contact
 ```bash
 curl -X DELETE https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts/delete/1
 ```
 
 + DELETE /contacts/archive/{id}
-Temporarily deletes a contact. The contact model uses the softdeletes trait
+-Temporarily deletes a contact. The contact model uses the softdeletes trait
 ```bash
 curl -X DELETE https://shrouded-taiga-9986.herokuapp.com/api/v1/contacts/archive/1
 ```
